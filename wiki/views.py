@@ -10,9 +10,7 @@ class PageList(ListView):
       2. Replace this CHALLENGE text with a descriptive docstring for PageList.
       3. Replace pass below with the code to render a template named `list.html`.
     """
-
     def get(self, request, *args):
-
       context = {
         "pages": Page.objects.all()
       }
@@ -35,14 +33,16 @@ class PageList(ListView):
            - Message Content: REPLACE_WITH_PAGE_TITLE has been successfully updated.
     """
 class PageDetailView(DetailView):
-  # model = Page
 
   def get(self, request, slug):
     context = {
     "page": Page.objects.get(slug = slug)
     }
     return render(request, "page-detail.html", context)
-      
 
   def post(self, request, slug):
       pass
+
+
+
+

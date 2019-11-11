@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+TEMPLATE_DIRS = (
+    "makewiki/templates/base.html",
+    "makewiki/templates/list.html",
+    "makewiki/templates/detail.html"
+)
 
 # Application definition
 
@@ -37,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'makewiki',
     'wiki'
 ]
 
@@ -53,16 +58,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'makewiki.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-            # Always use forward slashes, even on Windows.
-            # Don't forget to use absolute paths, not relative paths.
-            os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

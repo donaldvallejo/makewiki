@@ -41,8 +41,7 @@ class PageDetailView(DetailView):
     return render(request, "page-detail.html", context)
 
   def post(self, request, slug):
-      pass
-
+    pass
 
 
 
